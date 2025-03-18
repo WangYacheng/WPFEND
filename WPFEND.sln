@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFEND", "WPFEND\WPFEND.csproj", "{B26EDF1E-5D56-496C-B2A9-806FF6E9997F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFPrismEND", "WPFPrismEND\WPFPrismEND.csproj", "{CC70D12B-4E73-478D-922A-8CECB5D94732}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B26EDF1E-5D56-496C-B2A9-806FF6E9997F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B26EDF1E-5D56-496C-B2A9-806FF6E9997F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B26EDF1E-5D56-496C-B2A9-806FF6E9997F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B26EDF1E-5D56-496C-B2A9-806FF6E9997F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC70D12B-4E73-478D-922A-8CECB5D94732}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC70D12B-4E73-478D-922A-8CECB5D94732}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC70D12B-4E73-478D-922A-8CECB5D94732}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC70D12B-4E73-478D-922A-8CECB5D94732}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
