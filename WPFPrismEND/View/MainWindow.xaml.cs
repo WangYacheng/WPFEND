@@ -50,6 +50,9 @@ namespace WPFPrismEND
             eventAggregator.GetEvent<EventMessageArgsFilter>().Subscribe(Receive,data=>data.Id==1);
 
             eventAggregator.GetEvent<EventMessageArgsFilter>().Publish(new DataModel() { Id=2,Text="love"});
+
+            //bool keepSubscriberReferenceAlive
+            // false     true->对象销毁的时候，做注销操作
         }
 
         private void Receive()
