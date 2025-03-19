@@ -13,4 +13,14 @@ namespace WPFPrismEND.Base
 
     public class EventMessageArgs : PubSubEvent<string>
     { }
+
+    public class EventMessageDelegate : PubSubEvent<EventAction> { }
+
+    public class EventMessageArgsFilter : PubSubEvent<DataModel>
+    {}
+
+    public class EventAction
+    {
+        public Action<bool> ResultAction { get; set; }
+    }
 }

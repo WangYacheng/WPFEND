@@ -24,19 +24,27 @@ namespace WPFPrismEND
             InitializeComponent();
             this.DataContext = new MainModel();
 
-            //订阅消息
-            eventAggregator.GetEvent<EventMessage>().Subscribe(Receive);
+            ////订阅消息
+            //eventAggregator.GetEvent<EventMessage>().Subscribe(Receive);
+            //
+            ////发布消息
+            //eventAggregator.GetEvent<EventMessage>().Publish();
+            //
+            ////泛型版本
+            //eventAggregator.GetEvent<EventMessageArgs>().Subscribe(Receive);
+            //
+            //eventAggregator.GetEvent<EventMessageArgs>().Publish("Hello luyao");
 
-            //发布消息
-            eventAggregator.GetEvent<EventMessage>().Publish();
+            //IEventAggregator的委托
+            eventAggregator.GetEvent<EventMessageDelegate>().Subscribe(Receive);
 
-            //泛型版本
-            eventAggregator.GetEvent<EventMessageArgs>().Subscribe(Receive);
-
-            eventAggregator.GetEvent<EventMessageArgs>().Publish("Hello luyao");
-
-
-
+            eventAggregator.GetEvent<EventMessageDelegate>().Publish(new EventAction()
+            {
+                ResultAction = new Action<bool>(state =>
+                {
+                    Console.WriteLine("state="+ state);
+                })
+            });
 
         }
 
@@ -48,6 +56,16 @@ namespace WPFPrismEND
         private void Receive(string str)
         {
             Console.WriteLine( " 泛型参数  "+str );
+        }
+
+        private void Receive1(string str)
+        {
+            Console.WriteLine(" 泛型参数  " + str);
+        }
+
+        private void Receive(EventAction action)
+        {
+            action.ResultAction.Invoke(true);
         }
     }
 }
