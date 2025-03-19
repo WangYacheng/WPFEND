@@ -1,13 +1,12 @@
-﻿<Window x:Class="WPFPrismEND.MainWindow"
+﻿<Window x:Class="WPFPrismEND.View.Dialog1Window"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPFPrismEND"
+        xmlns:local="clr-namespace:WPFPrismEND.View"
         mc:Ignorable="d"
-        Title="{Binding Title}" Height="500" Width="350">
+        Title="{Binding Title}" Height="450" Width="300">
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-        <Button Content="Subscribe(订阅) " Margin="0,5" x:Name="btnSubscribe" Click="btnSubscribe_Click"></Button>
-        <Button Content="Publish(发布)"  Margin="0,5" x:Name="btnPublish" Click="btnPublish_Click"></Button>
+        <Button Content="Publish" x:Name="btnPublish" Command="{Binding OpenCommand}"/>
     </StackPanel>
 </Window>

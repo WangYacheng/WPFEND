@@ -23,4 +23,8 @@ namespace WPFPrismEND.Base
     {
         public Action<bool> ResultAction { get; set; }
     }
+
+    public class OpenMessage : PubSubEvent<string>
+    {
+    }
 }

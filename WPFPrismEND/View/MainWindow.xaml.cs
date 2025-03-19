@@ -19,15 +19,18 @@ namespace WPFPrismEND
     /// </summary>
     public partial class MainWindow : Window
     {
+        //private IEventAggregator _eventAggregator;
         public MainWindow(IEventAggregator eventAggregator)
         {
             InitializeComponent();
-            this.DataContext = new MainModel();
+
+            eventAggregator = Messenger.Defualt;
+            //this.DataContext = new MainModel();
 
             ////订阅消息
-            //eventAggregator.GetEvent<EventMessage>().Subscribe(Receive);
+            //_eventAggregator.GetEvent<EventMessage>().Subscribe(Receive);
             //
-            ////发布消息
+            //发布消息
             //eventAggregator.GetEvent<EventMessage>().Publish();
             //
             ////泛型版本
@@ -47,9 +50,9 @@ namespace WPFPrismEND
             //});
 
             //IEventAggregator的过滤
-            eventAggregator.GetEvent<EventMessageArgsFilter>().Subscribe(Receive,data=>data.Id==1);
+            //eventAggregator.GetEvent<EventMessageArgsFilter>().Subscribe(Receive,data=>data.Id==1);
 
-            eventAggregator.GetEvent<EventMessageArgsFilter>().Publish(new DataModel() { Id=2,Text="love"});
+            //eventAggregator.GetEvent<EventMessageArgsFilter>().Publish(new DataModel() { Id=2,Text="love"});
 
             //bool keepSubscriberReferenceAlive
             // false     true->对象销毁的时候，做注销操作
@@ -78,6 +81,18 @@ namespace WPFPrismEND
         private void Receive(DataModel data)
         {
             Console.WriteLine("IEventAggregator的过滤");
+        }
+
+      
+
+        private void btnSubscribe_Click(object sender, RoutedEventArgs e)
+        {
+            //_eventAggregator.GetEvent<EventMessage>().Subscribe(Receive);
+        }
+
+        private void btnPublish_Click(object sender, RoutedEventArgs e)
+        {
+            //_eventAggregator.GetEvent<EventMessage>().Publish();
         }
     }
 }

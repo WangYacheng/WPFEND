@@ -1,8 +1,12 @@
-﻿using Prism.Ioc;
+﻿using Prism.Events;
+using Prism.Ioc;
+using Prism.Services.Dialogs;
 using Prism.Unity;
 using System.Configuration;
 using System.Data;
 using System.Windows;
+using WPFPrismEND.Base;
+using WPFPrismEND.View;
 
 namespace WPFPrismEND
 {
@@ -13,12 +17,14 @@ namespace WPFPrismEND
     {
         protected override Window CreateShell()
         {
-            return Container.Resolve<MainWindow>();
+           
+            return Container.Resolve<Dialog1Window>();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            
+            //containerRegistry.RegisterDialogWindow<DialogWindow>();
+            containerRegistry.RegisterDialog<UCDetail>();
         }
     }
 
