@@ -1,5 +1,4 @@
-﻿using Prism.Events;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace WPFPrismEND.Base
 {
-    public class EventMessage:PubSubEvent
+    public class DataModel
     {
+        public int Id { get; set; }
+        public string Text { get; set; }
     }
-
-    public class EventMessageArgs : PubSubEvent<string>
-    { }
 }

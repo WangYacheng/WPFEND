@@ -30,12 +30,24 @@ namespace WPFPrismEND
             //发布消息
             eventAggregator.GetEvent<EventMessage>().Publish();
 
+            //泛型版本
+            eventAggregator.GetEvent<EventMessageArgs>().Subscribe(Receive);
+
+            eventAggregator.GetEvent<EventMessageArgs>().Publish("Hello luyao");
+
+
+
 
         }
 
         private void Receive()
         {
             Console.WriteLine(" MainWindow Receive ");
+        }
+
+        private void Receive(string str)
+        {
+            Console.WriteLine( " 泛型参数  "+str );
         }
     }
 }
