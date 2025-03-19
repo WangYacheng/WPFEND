@@ -36,16 +36,20 @@ namespace WPFPrismEND
             //eventAggregator.GetEvent<EventMessageArgs>().Publish("Hello luyao");
 
             //IEventAggregator的委托
-            eventAggregator.GetEvent<EventMessageDelegate>().Subscribe(Receive);
+            //eventAggregator.GetEvent<EventMessageDelegate>().Subscribe(Receive);
+            //
+            //eventAggregator.GetEvent<EventMessageDelegate>().Publish(new EventAction()
+            //{
+            //    ResultAction = new Action<bool>(state =>
+            //    {
+            //        Console.WriteLine("state="+ state);
+            //    })
+            //});
 
-            eventAggregator.GetEvent<EventMessageDelegate>().Publish(new EventAction()
-            {
-                ResultAction = new Action<bool>(state =>
-                {
-                    Console.WriteLine("state="+ state);
-                })
-            });
+            //IEventAggregator的过滤
+            eventAggregator.GetEvent<EventMessageArgsFilter>().Subscribe(Receive,data=>data.Id==1);
 
+            eventAggregator.GetEvent<EventMessageArgsFilter>().Publish(new DataModel() { Id=2,Text="love"});
         }
 
         private void Receive()
@@ -66,6 +70,11 @@ namespace WPFPrismEND
         private void Receive(EventAction action)
         {
             action.ResultAction.Invoke(true);
+        }
+
+        private void Receive(DataModel data)
+        {
+            Console.WriteLine("IEventAggregator的过滤");
         }
     }
 }
