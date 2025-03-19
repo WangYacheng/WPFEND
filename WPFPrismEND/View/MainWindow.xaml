@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFPrismEND"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="350">
+        Title="{Binding Title}" Height="500" Width="350">
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
         <Button Content="爱情 " ></Button>
     </StackPanel>

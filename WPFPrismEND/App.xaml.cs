@@ -13,7 +13,7 @@ namespace WPFPrismEND
     {
         protected override Window CreateShell()
         {
-            return new MainWindow() { Title = "Prism Start" };
+            return Container.Resolve<MainWindow>();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
