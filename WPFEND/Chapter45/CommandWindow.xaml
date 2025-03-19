@@ -11,7 +11,7 @@
 
         <Border Height="40" Background="Orange">
             <Border.InputBindings>
-                <MouseBinding Command="BtnCommand"></MouseBinding>
+               
             </Border.InputBindings>
         </Border>
     </StackPanel>
